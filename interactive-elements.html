@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="interactive-elements.js" defer></script>
+  <title>Controls</title>
+</head>
+
+<body>
+  <div id="output"></div>
+  <br><br> <!-- should style this with CSS really but that's not the point of this demo -->
+
+  <!-- for specifies which input the label is associated with by referencing the ID -->
+  <label for="edInputOne">Label before:</label>
+  <input id="edInputOne" type="text" placeholder="Enter Name" title="Enter customer name">
+  <label for="edInputOne">Label after</label>
+  <br>
+
+  <label>Implicit label:
+    <input id="edInputTwo" type="text">
+  </label>
+  <br><br>
+
+  <button id="btnPressMe">Press Me</button>
+  <br><br>
+
+  <input type="checkbox" id="cbEmail" checked>
+  <label for="cbEmail">email</label>
+
+  <input type="checkbox" id="cbText">
+  <label for="cbText">text</label>
+  <br><br>
+
+  <input type="color" id="cpColour" value="#0000FF">
+  <label for="cpColour">Pick a Colour</label>
+  <br><br>
+
+  <input type="date" id="dateAppointment" value="2023-07-22" min="2023-01-01" max="2023-12-31">
+  <label for="dtAppointment">Appointment Date</label>
+  <br><br>
+  <label for="meeting-time">Choose a time for your appointment:</label>
+  <br><br>
+  <input type="datetime-local" id="dtAppointment" value="2023-06-12T19:30" min="2023-06-07T08:00"
+    max="2023-06-14T17:00">
+  <br><br>
+
+  <label for="udHowMany">How Many? </label>
+  <input type="number" id="udHowMany" min="10" max="15" value="12"/> <!-- min and max only limit spinner -->
+  <br><br>
+
+  <input type="radio" id="rdRed" name="rdColour" value="Red" />
+  <label for="rdRed">Red</label>
+
+  <input type="radio" id="rdGreen" name="rdColour" value="Green" />
+  <label for="rdGreen">Green</label>
+
+  <input type="radio" id="rdBlue" name="rdColour" value="Blue" checked />
+  <label for="rdBlue">Blue</label>
+  <br><br>
+
+  <!-- Select only one from list. Use size to open size options -->
+  <label for="creditCardId">Choose Card</label><br>
+  <select id="creditCardId" size="3">
+    <option value="Visa">Visa</option>
+    <option value="Mastercard">Mastercard</option>
+    <option value="American Express">American Express</option>
+  </select>
+  <br><br>
+
+  <!-- No size specified so drop down -->
+  <select>
+    <!-- Add this as clicking on a selected item wont trigger input event-->
+    <!-- hidden won't hide it initially but will after a selection -->
+    <!-- This avoids triggering if someone clicks choose a card later -->
+    <option value="" hidden>Choose a Card</option> 
+    <option value="Visa">Visa</option>
+    <option value="Mastercard">Mastercard</option>
+    <option value="American Express">American Express</option>
+  </select>
+  <br><br>
+
+  <!-- select multiple into an array. If size < options, scroll bar works size = how many to show -->
+  <!-- Need name on this one to access array of selections -->
+  <label for="selectMultiId">Select one or more</label><br>
+  <select name="list_box_name[]" id="selectMultiId" size="3" multiple="multiple">
+    <option value="chicken">Chicken Piece</option>
+    <option value="chicken">Chicken Bucket</option>
+    <option value="chips">Chips</option>
+    <option value="gravy">Gravy</option>
+  </select>
+  <br><br>
+
+
+  <label for="taText">Stuff:</label><br>
+
+  <!-- rows is just the start size. Text area can be dragged -->
+  <textarea id="taText" rows="4" cols="20">
+Type some stuff in that you want to span more than one line.
+</textarea>
+
+</body>
+
+</html>
